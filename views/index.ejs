@@ -7,17 +7,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/normalize.css">
   <link rel="stylesheet" href="/skeleton.css">
-  <title>Index View</title>
+  <title>Budget Index View</title>
 </head>
 
 <body>
   <h1>Budgtr All</h1>
+    <a href='/budget/new'>
+      <button>Create</button>
+    </a>
   <table>
-    <% for (item of budget) { %>
+    <% for (let i = 0; i <= budget.length -1; i++) { %>
       <tr>
-        <td><%= item.date %></td>
-        <td><a><%= item.name %></a></td>
-        <td><%= item.amount %></td>
+        <td><%= budget[i].date %></td>
+        <td><a href="/budget/<%= i %>"><%= budget[i].name %></a></td>
+        <td><%= budget[i].amount %></td>
       </tr>
     <% } %>
   </table>
