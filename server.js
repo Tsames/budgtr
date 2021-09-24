@@ -4,19 +4,21 @@
 const express = require("express");
 const app = express();
 const port = 3000;
-const budgets = require("./models/budget");
+const budget = require("./models/budget");
 
 /*********************
  Middleware
 *********************/
 
-
+app.use(express.static('public'))
 
 /*********************
  Routes
 *********************/
 
-
+app.get('',(req,res) => {
+  res.render("index.ejs");
+})
 
 /*********************
  Server Listener
